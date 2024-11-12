@@ -6,16 +6,6 @@ import { useState } from 'react';
 
 const Form = (props) => {
 
-    const teams = [
-        'Programação',
-        'Front-End',
-        'Data Science',
-        'DevOps',
-        'UX e Design',
-        'Mobile',
-        'Inovação e Gestão'
-    ]
-
     //Métodos 'use' são hooks do React
     //Quando uma variável muda no JS, o react não sabe dessa mudança e não renderiza o novo valor em tela
     //Quando usamos useState/setState, o react sabe dessa mudança, logo, estamos 'pedindo' para o react renderizar o novo valor
@@ -23,7 +13,7 @@ const Form = (props) => {
     const [name, setName] = useState('')
     const [occupation, setOccupation] = useState('')
     const [imageLink, setImageLink] = useState('')
-    const [team, setTeam] = useState('')
+    const [team, setTeam] = useState('Programação')
 
     const onSave = (event) => {
         event.preventDefault()
@@ -33,6 +23,12 @@ const Form = (props) => {
             imageLink,
             team
         })
+
+        setName('')
+        setOccupation('')
+        setTeam('') //Pode bugar, pois o valor inicial exibido no form é Programação, mas não há valor real.
+        setImageLink('')
+
         console.log('Form was submitted =>', name, occupation, imageLink, team)
     }
 
@@ -67,7 +63,7 @@ const Form = (props) => {
 
                 <DropdownField
                     label="Time"
-                    itens={teams}
+                    itens={props.teamsNames}
                     value={team}
                     setState={value => setTeam(value)} />
 
