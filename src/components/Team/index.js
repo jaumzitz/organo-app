@@ -15,10 +15,11 @@ const Team = (props) => {
             <h3 style={h3CSS}>{props.name}</h3>
             <div className='coworkers'>
 
-            {props.coworkers.map(coworker => <Coworker 
+            {props.coworkers.map(coworker => <Coworker key={coworker.name}
                 name={coworker.name} 
                 occupation={coworker.occupation} 
-                image={coworker.imageLink}/>)}
+                image={coworker.imageLink}
+                backgroundColor={props.primaryColor}/>)}
             </div>
         </section>
 
