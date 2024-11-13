@@ -1,0 +1,26 @@
+.footer {
+    background-color: #6278F7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px;
+}
+
+.socialMenu {
+    display: flex;
+    
+}
+
+.socialMenu li {
+    padding: 10px;
+    list-style-type: none;
+}
+
+.logo {
+    max-height: 100%;
+}
+
+.footer p {
+    font-weight: 600;
+    color: #FFF;
+}
